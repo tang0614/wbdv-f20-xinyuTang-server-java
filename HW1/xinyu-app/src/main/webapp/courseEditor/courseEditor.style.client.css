@@ -1,0 +1,14 @@
+.wbdv-close {
+  padding-right: 2rem;
+}
+
+.wbdv-module-item-delete-btn {
+  padding-left: 2rem;
+}
+
+.wbdv-lesson-add-btn {
+  color: white;
+  position: absolute;
+  right: 0;
+  padding: 0.5rem;
+}

@@ -9,35 +9,39 @@
     />
     <link href="../css/styles.css" rel="stylesheet" />
     <link href="login.style.client.css" rel="stylesheet" />
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+      integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+      integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+      crossorigin="anonymous"
+    ></script>
   </head>
   <body>
     <div class="container">
-      <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="#">Login</a>
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-toggle="collapse"
-          data-target="#navbarSupportedContent"
-          aria-controls="navbarSupportedContent"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">Log In</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
-
+      
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
-              <a class="nav-link" href="../index.html"
-                >Home <span class="sr-only">(current)</span></a
-              >
+              <a class="nav-link" href="../index.html">Home <span class="sr-only">(current)</span></a>
             </li>
-          </ul>
+         
+      
         </div>
       </nav>
-
-     
 
       <div class="wbdv-field wbdv-username">
         Username <input type="text" class="form-control" />
@@ -54,22 +58,20 @@
         Log In
       </a>
 
-      <div class='wbdv-link wbdv-register'>
-        <button type="button" class="btn btn-primary">
+      <div class="wbdv-link wbdv-register">
+        <a
+          href="../register/register.template.client.html"
+          class="btn btn-primary"
+        >
           Sign Up
-        </button>
-
+        </a>
       </div>
-      
 
-      <div class="wbdv-link wbdv-forgot-password"></div>
-      <button
-        type="button"
-        class="btn btn-secondary "
-      >
-        Forgot Password?
-      </button>
-    </div>
+      <div class="wbdv-link wbdv-forgot-password">
+        <button type="button" class="btn btn-secondary">
+          Forgot Password?
+        </button>
+      </div>
     </div>
   </body>
 </html>

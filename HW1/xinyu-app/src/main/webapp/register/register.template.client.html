@@ -3,11 +3,81 @@
   <head>
     <meta charset="UTF-8" />
     <title>Title</title>
+    <link
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
     <link href="../css/styles.css" rel="stylesheet" />
+    <link href="register.style.client.css" rel="stylesheet" />
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+      integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+      integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+      crossorigin="anonymous"
+    ></script>
   </head>
   <body>
-    <a href="../index.html"> Home </a>
-    <h1>Register</h1>
-    <a href="../login/login.template.client.html"> Login </a>
+    <div class="container">
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">Sign Up</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="../index.html"
+                >Home <span class="sr-only">(current)</span></a
+              >
+            </li>
+          </ul>
+        </div>
+      </nav>
+
+      <div class="wbdv-field wbdv-username">
+        Username <input type="text" class="form-control" />
+      </div>
+
+      <div class="wbdv-field wbdv-password">
+        Password <input type="password" class="form-control" />
+      </div>
+
+      <div class="wbdv-field wbdv-password-verify">
+        Verify Password <input type="password" class="form-control" />
+      </div>
+
+      <div class="wbdv-button wbdv-register">
+        <a
+          href="../profile/profile.template.client.html"
+          class="btn btn-success btn-block"
+        >
+          Sign Up
+        </a>
+      </div>
+
+      <div class="wbdv-link wbdv-register">
+        <a href="../login/login.template.client.html" class="btn btn-primary"
+          >Log In
+        </a>
+      </div>
+    </div>
   </body>
 </html>

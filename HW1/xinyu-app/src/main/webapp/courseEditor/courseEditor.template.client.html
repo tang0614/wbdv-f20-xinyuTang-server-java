@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.14.0/css/all.css"
+      integrity="sha384-HzLeBuhoNPvSl5KYnjx0BT+WB0QEEqLprO+NBkkk5gbc67FTaL7XIGa2w1L0Xbgc"
+      crossorigin="anonymous"
+    />
+    <link
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link href="../css/styles.css" rel="stylesheet" />
+    <link href="courseEditor.style.client.css" rel="stylesheet" />
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+      integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+      integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <a
+        class="fa fa-chevron-left wbdv-course-editor wbdv-close"
+        aria-hidden="true"
+        href="../index.html"
+      ></a>
+      <a class="navbar-brand wbdv-course-title" href="#">CS5500</a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <i class="fas fa-plus-circle wbdv-module-item-add-btn"></i>
+      </button>
+
+      <div
+        class="collapse navbar-collapse wbdv-lesson-tabs"
+        id="navbarSupportedContent"
+      >
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href=""
+              >Build<span class="sr-only">(current)</span></a
+            >
+          </li>
+
+          <li class="nav-item active">
+            <a class="nav-link" href=""
+              >Pages<span class="sr-only">(current)</span></a
+            >
+          </li>
+
+          <li class="nav-item active">
+            <a class="nav-link" href=""
+              >Theme<span class="sr-only">(current)</span></a
+            >
+          </li>
+
+          <li class="nav-item active">
+            <a class="nav-link" href=""
+              >Store<span class="sr-only">(current)</span></a
+            >
+          </li>
+
+          <li class="nav-item active">
+            <a class="nav-link" href=""
+              >Apps<span class="sr-only">(current)</span></a
+            >
+          </li>
+
+          <li class="nav-item active">
+            <a class="nav-link" href=""
+              >Settings<span class="sr-only">(current)</span></a
+            >
+          </li>
+
+          <li class="nav-item active">
+            <i class="fas fa-plus-circle wbdv-lesson-add-btn"></i>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <div class="row">
+      <div class="col-4">
+        <div class="list-group wbdv-module-list" id="list-tab" role="tablist">
+          <a
+            class="list-group-item list-group-item-action active wbdv-module-item wbdv-module-item-title"
+            id="list-m1-list"
+            data-toggle="list"
+            href="#list-m1"
+            role="tab"
+            aria-controls="m1"
+            >Module 1
+            <i class="fas fa-backspace wbdv-module-item-delete-btn"></i>
+          </a>
+
+          <a
+            class="list-group-item list-group-item-action wbdv-module-item wbdv-module-item-title"
+            id="list-m2-list"
+            data-toggle="list"
+            href="#list-m2"
+            role="tab"
+            aria-controls="m2"
+            >Module 2<i class="fas fa-backspace wbdv-module-item-delete-btn"></i
+          ></a>
+
+          <a
+            class="list-group-item list-group-item-action wbdv-module-item wbdv-module-item-title"
+            id="list-m3-list"
+            data-toggle="list"
+            href="#list-m3"
+            role="tab"
+            aria-controls="m3"
+            >Module 3<i class="fas fa-backspace wbdv-module-item-delete-btn"></i
+          ></a>
+
+          <a
+            class="list-group-item list-group-item-action wbdv-module-item wbdv-module-item-title"
+            id="list-m4-list"
+            data-toggle="list"
+            href="#list-m4"
+            role="tab"
+            aria-controls="m4"
+            >Module 4<i class="fas fa-backspace wbdv-module-item-delete-btn"></i
+          ></a>
+
+          <a
+            class="list-group-item list-group-item-action wbdv-module-item wbdv-module-item-title"
+            id="list-m5-list"
+            data-toggle="list"
+            href="#list-m5"
+            role="tab"
+            aria-controls="m5"
+            ><i class="fas fa-plus-circle"></i
+          ></a>
+        </div>
+      </div>
+
+      <div class="col-8">
+        <div class="tab-content" id="nav-tabContent">
+          <div
+            class="tab-pane fade show active"
+            id="list-m1"
+            role="tabpanel"
+            aria-labelledby="list-m1-list"
+          >
+            <h1>Module One</h1>
+            <ul class="nav wbdv-topic-pill-list">
+              <li class="nav-item wbdv-topic-pill">
+                <a class="nav-link active" href="#">Topic 1</a>
+              </li>
+              <li class="nav-item wbdv-topic-pill">
+                <a class="nav-link" href="#">Topic 2</a>
+              </li>
+              <li class="nav-item wbdv-topic-pill">
+                <a class="nav-link" href="#">Topic 3</a>
+              </li>
+
+              <li class="nav-item wbdv-topic-pill">
+                <a class="fas fa-plus-circle wbdv-topic-add-btn" href="#"></a>
+              </li>
+            </ul>
+          </div>
+          <div
+            class="tab-pane fade"
+            id="list-m2"
+            role="tabpanel"
+            aria-labelledby="list-m2-list"
+          >
+            <h1>Module Two</h1>
+            <ul class="nav wbdv-topic-pill-list">
+              <li class="nav-item wbdv-topic-pill">
+                <a class="nav-link active" href="#">Topic 1</a>
+              </li>
+              <li class="nav-item wbdv-topic-pill">
+                <a class="nav-link" href="#">Topic 2</a>
+              </li>
+              <li class="nav-item wbdv-topic-pill">
+                <a class="nav-link" href="#">Topic 3</a>
+              </li>
+
+              <li class="nav-item wbdv-topic-pill">
+                <a class="fas fa-plus-circle wbdv-topic-add-btn" href="#"></a>
+              </li>
+            </ul>
+          </div>
+          <div
+            class="tab-pane fade"
+            id="list-m3"
+            role="tabpanel"
+            aria-labelledby="list-m3-list"
+          >
+            <h1>Module Three</h1>
+            <ul class="nav wbdv-topic-pill-list">
+              <li class="nav-item wbdv-topic-pill">
+                <a class="nav-link active" href="#">Topic 1</a>
+              </li>
+              <li class="nav-item wbdv-topic-pill">
+                <a class="nav-link" href="#">Topic 2</a>
+              </li>
+              <li class="nav-item wbdv-topic-pill">
+                <a class="nav-link" href="#">Topic 3</a>
+              </li>
+
+              <li class="nav-item wbdv-topic-pill">
+                <a class="fas fa-plus-circle wbdv-topic-add-btn" href="#"></a>
+              </li>
+            </ul>
+          </div>
+          <div
+            class="tab-pane fade"
+            id="list-m4"
+            role="tabpanel"
+            aria-labelledby="list-m4-list"
+          >
+            <h1>Module Four</h1>
+            <ul class="nav wbdv-topic-pill-list">
+              <li class="nav-item wbdv-topic-pill">
+                <a class="nav-link active" href="#">Topic 1</a>
+              </li>
+              <li class="nav-item wbdv-topic-pill">
+                <a class="nav-link" href="#">Topic 2</a>
+              </li>
+              <li class="nav-item wbdv-topic-pill">
+                <a class="nav-link" href="#">Topic 3</a>
+              </li>
+
+              <li class="nav-item wbdv-topic-pill">
+                <a class="fas fa-plus-circle wbdv-topic-add-btn" href="#"></a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
