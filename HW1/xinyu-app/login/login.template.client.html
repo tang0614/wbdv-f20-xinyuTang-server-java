@@ -8,32 +8,23 @@
       rel="stylesheet"
     />
     <link href="../css/styles.css" rel="stylesheet" />
-    <link href="register.style.client.css" rel="stylesheet" />
+    <link href="login.style.client.css" rel="stylesheet" />
   </head>
   <body>
     <div class="container">
       <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="#">Sign Up</a>
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-toggle="collapse"
-          data-target="#navbarSupportedContent"
-          aria-controls="navbarSupportedContent"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
+        <a class="navbar-brand" href="#">Log In</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
-
+      
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
-              <a class="nav-link" href="../index.html"
-                >Home <span class="sr-only">(current)</span></a
-              >
+              <a class="nav-link" href="../index.html">Home <span class="sr-only">(current)</span></a>
             </li>
-          </ul>
+         
+      
         </div>
       </nav>
 
@@ -45,23 +36,26 @@
         Password <input type="password" class="form-control" />
       </div>
 
-      <div class="wbdv-field wbdv-password-verify">
-        Verify Password <input type="password" class="form-control" />
-      </div>
+      <a
+        href="../profile/profile.template.client.html"
+        class="btn btn-success btn-block wbdv-button wbdv-login"
+      >
+        Log In
+      </a>
 
-      <div class="wbdv-button wbdv-register">
+      <div class="wbdv-link wbdv-register">
         <a
-          href="../profile/profile.template.client.html"
-          class="btn btn-success btn-block"
+          ref="../register/register.template.client.html"
+          class="btn btn-primary"
         >
           Sign Up
         </a>
       </div>
 
-      <div class="wbdv-link wbdv-register">
-        <a ref="../login/login.template.client.html" class="btn btn-primary"
-          >Log In
-        </a>
+      <div class="wbdv-link wbdv-forgot-password">
+        <button type="button" class="btn btn-secondary">
+          Forgot Password?
+        </button>
       </div>
     </div>
   </body>

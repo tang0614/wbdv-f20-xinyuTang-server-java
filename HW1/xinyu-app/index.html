@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link href="./css/styles.css" rel="stylesheet" />
+    <link
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.14.0/css/all.css"
+      integrity="sha384-HzLeBuhoNPvSl5KYnjx0BT+WB0QEEqLprO+NBkkk5gbc67FTaL7XIGa2w1L0Xbgc"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <a class="navbar-brand wbdv-label wbdv-course-manager" href="#"
+        >Course Manager</a
+      >
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon wbdv-field wbdv-hamburger"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="login/login.template.client.html"
+              >Log in<span class="sr-only">(current)</span></a
+            >
+          </li>
+
+          <li class="nav-item active">
+            <a class="nav-link" href="register/register.template.client.html"
+              >Sign up<span class="sr-only">(current)</span></a
+            >
+          </li>
+
+          <li class="wbdv-button wbdv-add-course">
+            <i class="fas fa-plus-circle"></i>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <nav class="navbar navbar-light bg-light">
+      <form class="form-inline">
+        <input
+          class="form-control mr-sm-2 wbdv-field wbdv-new-course"
+          type="search"
+          placeholder="Search"
+          aria-label="Search"
+        />
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">
+          Search
+        </button>
+      </form>
+    </nav>
+
+    <table class="table table-dark">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col" class="wbdv-header wbdv-title">Title</th>
+          <th scope="col" class="wbdv-header wbdv-owner">
+            Owned by
+            <i class="fas fa-sort wbdv-header wbdv-sort"></i>
+          </th>
+          <th scope="col" class="wbdv-header wbdv-last-modified">
+            Last modified by me
+          </th>
+          <th scope="col" class="wbdv-header wbdv-last-modified">Delete</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th scope="row" class="wbdv-row wbdv-course">
+            1 <i class="fa fa-file wbdv-row wbdv-icon" aria-hidden="true"></i>
+          </th>
+
+          <td class="Course row course title">
+            <a
+              class="btn btn-primary stretched-link wbdv-button wbdv-list-layout wbdv-button wbdv-grid-layout"
+              >CS5500 Software Engineering Graduate</a
+            >
+          </td>
+          <td class="wbdv-owner">me</td>
+
+          <td class="wbdv-row wbdv-modified-date">6:45pm</td>
+          <td class="wbdv-row wbdv-button wbdv-delete">
+            <i class="fas fa-backspace"></i>
+          </td>
+        </tr>
+        <tr>
+          <th scope="row" class="wbdv-row wbdv-course">
+            2 <i class="fa fa-file wbdv-row wbdv-icon" aria-hidden="true"></i>
+          </th>
+          <td class="Course row course title">
+            <a
+              class="btn btn-primary stretched-link wbdv-button wbdv-list-layout wbdv-button wbdv-grid-layout"
+              >CS4550 Software Engineering UnderGraduate</a
+            >
+          </td>
+          <td class="wbdv-owner">me</td>
+          <td class="wbdv-row wbdv-modified-date">6:45pm</td>
+          <td class="wbdv-row wbdv-button wbdv-delete">
+            <i class="fas fa-backspace"></i>
+          </td>
+        </tr>
+        <tr>
+          <th scope="row" class="wbdv-row wbdv-course">
+            3 <i class="fa fa-file wbdv-row wbdv-icon" aria-hidden="true"></i>
+          </th>
+          <td class="Course row course title">
+            <a
+              class="btn btn-primary stretched-link wbdv-button wbdv-list-layout wbdv-button wbdv-grid-layout"
+            >
+              CS5610 WebDev Graduate</a
+            >
+          </td>
+          <td class="wbdv-owner">me</td>
+          <td class="wbdv-row wbdv-modified-date">6:45pm</td>
+          <td class="wbdv-row wbdv-button wbdv-delete">
+            <i class="fas fa-backspace"></i>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </body>
+</html>

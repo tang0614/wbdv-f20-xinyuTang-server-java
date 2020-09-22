@@ -1,0 +1,13 @@
+/*body {*/
+/*    margin: 8px;*/
+/*}*/
+input {
+  margin-bottom: 10px;
+}
+
+.wbdv-add-course {
+  position: absolute;
+  right: 0;
+  top: 0;
+  padding: 1rem;
+}
