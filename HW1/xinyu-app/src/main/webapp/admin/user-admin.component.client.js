@@ -52,9 +52,75 @@ let users = [
   const deleteUser = (index) => {
     console.log("deleting", index);
     users.splice(index, 1);
-    console.log("users is", users);
     renderUsers(users);
   };
+
+  const editUser = (rowClone, index) => {
+    console.log(
+      "editing user rowClone",
+      rowClone.find(".wbdv-edit").parent().parent().parent()
+    );
+
+    let dad = rowClone.find(".wbdv-edit").parent().parent().parent();
+
+    let username = dad.find(".wbdv-username").text();
+    let firstName = dad.find(".wbdv-first-name").text();
+    let lastName = dad.find(".wbdv-last-name").text();
+
+    dad
+      .find(".wbdv-username")
+      .append(
+        '<input id="edit_usernameFld" type="text" class="form-control" placeholder="Username" value=' +
+          username +
+          " />"
+      );
+
+    dad
+      .find(".wbdv-first-name")
+      .append(
+        '<input id="edit_firstNameFld" type="text" class="form-control" placeholder="First Name" value=' +
+          firstName +
+          " />"
+      );
+
+    dad
+      .find(".wbdv-last-name")
+      .append(
+        '<input id="edit_lastNameFld" type="text" class="form-control" placeholder="Last Name" value=' +
+          lastName +
+          " />"
+      );
+
+    //check edit user
+    createUserBtn = jQuery(".wbdv-update");
+    createUserBtn.click(() => createEditUser(index));
+  };
+
+  function createEditUser(index) {
+    console.log("calling editUser");
+    const usernameFld = $("#edit_usernameFld");
+    const firstNameFld = $("#edit_firstNameFld");
+    const lastNameFld = $("#edit_lastNameFld");
+
+    const username = usernameFld.val();
+    const firstName = firstNameFld.val();
+    const lastName = lastNameFld.val();
+
+    const old_user = users[index];
+
+    console.log("old_user", old_user);
+    const user = {
+      username,
+      password: old_user.password,
+      firstName,
+      lastName,
+      role: old_user.role,
+    };
+
+    users[index] = user;
+    console.log("users", users);
+    renderUsers(users);
+  }
 
   function createUser() {
     console.log("calling userUser");
@@ -84,13 +150,13 @@ let users = [
   }
 
   function clearForm() {
-    console.log("clearing the form");
     $("#usernameFld").val("");
     $("#firstNameFld").val("");
     $("#lastNameFld").val("");
     $("#passwordFld").val("");
     $("#roleFld").val("");
   }
+
   function renderUsers(users) {
     tbody.empty();
     for (var u in users) {
@@ -103,7 +169,8 @@ let users = [
       rowClone.find(".wbdv-role").html(user.role);
 
       rowClone.find(".wbdv-remove").click(() => deleteUser(user.id));
-      // rowClone.find(".wbdv-edit").click(() => deleteUser(user.id));
+
+      rowClone.find(".wbdv-edit").click(() => editUser(rowClone, user.id));
 
       //last name and role
       tbody.append(rowClone);
