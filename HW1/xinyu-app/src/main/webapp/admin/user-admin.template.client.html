@@ -4,7 +4,14 @@
     <meta charset="UTF-8">
     <title>User Admin</title>
     <link href="../css/styles.css" rel="stylesheet" />
-   
+    <link href="user-admin.style.client.css" rel="stylesheet" />
+    <link
+    rel="stylesheet"
+    href="https://use.fontawesome.com/releases/v5.14.0/css/all.css"
+    integrity="sha384-HzLeBuhoNPvSl5KYnjx0BT+WB0QEEqLprO+NBkkk5gbc67FTaL7XIGa2w1L0Xbgc"
+    crossorigin="anonymous"
+  />
+  
     <link rel="stylesheet" href=
             "https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"/>
     <link rel="stylesheet" href=
@@ -24,12 +31,12 @@
     <table class="table">
         <thead>
         <tr>
-            <th>Username</th>
-            <th>Password</th>
-            <th>First Name</th>
-            <th>Last Name</th>
-            <th>Role</th>
-            <th>&nbsp;</th>
+            <th  scope="col">Username</th>
+            <th  scope="col">Password</th>
+            <th  scope="col">First Name</th>
+            <th  scope="col">Last Name</th>
+            <th  scope="col">Role</th>
+            <th  scope="col">&nbsp;</th>
         </tr>
 
         <tr class="wbdv-form">
@@ -49,13 +56,16 @@
             <td><span
                     class="float-right"
                     style="white-space: nowrap">
-                <i class="fa-2x fa fa-search wbdv-search"></i> <i
-                    class="fa-2x fa fa-plus wbdv-create"></i> <i
-                    class="fa-2x fa fa-check wbdv-update"></i>
+            
+      
+                    <i
+                    class="fas fa-plus wbdv-create"></i> <i
+                    class="far fa-check-circle wbdv-update"></i>
                     </span></td>
         </tr>
 
         <tr class="wbdv-template wbdv-user wbdv-hidden">
+            
             <td class="wbdv-username">ada</td>
             <td>&nbsp;</td>
             <td class="wbdv-first-name">Ada</td>
@@ -63,8 +73,11 @@
             <td class="wbdv-role">FACULTY</td>
             <td class="wbdv-actions">
                 <span class="float-right">
-                  <i id="wbdv-remove" class="fa-2x fa fa-times wbdv-remove"></i>
-                  <i id="wbdv-edit" class="fa-2x fa fa-pencil wbdv-edit"></i>
+                    
+                  <i id="wbdv-remove" class="far fa-trash-alt wbdv-remove">
+      
+                  </i>
+                  <i id="wbdv-edit" class="far fa-edit wbdv-edit"></i>
                 </span>
             </td>
         </tr>
