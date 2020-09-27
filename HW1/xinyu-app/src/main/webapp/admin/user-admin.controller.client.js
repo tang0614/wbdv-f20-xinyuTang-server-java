@@ -13,15 +13,17 @@
     //create new user
     createUserBtn = jQuery(".wbdv-create");
     createUserBtn.click(createUser);
-
-    // userService.findAllUsers().then(renderUsers);
-    const users = findAllUsers();
-    renderUsers(users);
+    userService.findAllUsers().then(renderUsers);
   }
 
-  const deleteUser = (index) => {
+  const deleteUser = async (index) => {
     console.log("deleting", index);
-    const users = findAllUsers();
+    try {
+      const users = await userService.findAllUsers();
+    } catch (error) {
+      console.log("error is", error);
+    }
+
     users.splice(index, 1);
     renderUsers(users);
   };
@@ -67,7 +69,7 @@
     createUserBtn.click(() => findUserById(index));
   };
 
-  function findUserById(index) {
+  async function findUserById(index) {
     console.log("calling updateUser");
     const usernameFld = $("#edit_usernameFld");
     const firstNameFld = $("#edit_firstNameFld");
@@ -77,7 +79,12 @@
     const firstName = firstNameFld.val();
     const lastName = lastNameFld.val();
 
-    const users = findAllUsers();
+    try {
+      const users = await userService.findAllUsers();
+    } catch (error) {
+      console.log("error is", error);
+    }
+
     const old_user = users[index];
 
     console.log("old_user", old_user);
@@ -94,7 +101,7 @@
     renderUsers(users);
   }
 
-  function createUser() {
+  async function createUser() {
     console.log("calling userUser");
     const usernameFld = $("#usernameFld");
     const firstNameFld = $("#firstNameFld");
@@ -116,7 +123,12 @@
       role,
     };
 
-    const users = findAllUsers();
+    try {
+      const users = await userService.findAllUsers();
+    } catch (error) {
+      console.log("error is", error);
+    }
+
     users.push(user);
     renderUsers(users);
     clearForm();
@@ -167,39 +179,5 @@
 
     //last name and role
     tbody.append(rowClone);
-  }
-  function findAllUsers() {
-    let users = [
-      {
-        id: 1,
-        username: "alice win1",
-        firstName: "alice",
-        lastName: "win",
-        role: "FACULTY",
-      },
-      {
-        id: 2,
-        username: "alice win2",
-        firstName: "alice",
-        lastName: "win",
-        role: "FACULTY",
-      },
-      {
-        id: 3,
-        username: "alice win3",
-        firstName: "alice",
-        lastName: "win",
-        role: "FACULTY",
-      },
-      {
-        id: 4,
-        username: "alice win4",
-        firstName: "alice",
-        lastName: "win",
-        role: "FACULTY",
-      },
-    ];
-
-    return users;
   }
 })();
