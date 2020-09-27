@@ -27,7 +27,7 @@
     renderUsers(users);
   };
 
-  const updateUser = (rowClone, index) => {
+  const editUser = (rowClone, index) => {
     console.log(
       "editing user rowClone",
       rowClone.find(".wbdv-edit").parent().parent().parent()
@@ -65,11 +65,11 @@
 
     //check update user
     createUserBtn = jQuery(".wbdv-update");
-    createUserBtn.click(() => findUserById(index));
+    createUserBtn.click(() => updateEditUser(index));
   };
 
-  async function findUserById(index) {
-    console.log("calling updateUser");
+  async function updateEditUser(index) {
+    console.log("calling editUser");
     const usernameFld = $("#edit_usernameFld");
     const firstNameFld = $("#edit_firstNameFld");
     const lastNameFld = $("#edit_lastNameFld");
@@ -80,22 +80,30 @@
 
     const users = await userService.findAllUsers();
 
-    console.log("error is", error);
-
-    const old_user = users[index];
+    const old_user = await findUserById(index);
 
     console.log("old_user", old_user);
     const user = {
       username,
-      password: old_user.password,
       firstName,
       lastName,
-      role: old_user.role,
     };
 
-    users[index] = user;
-    console.log("users", users);
+    userService.updateUser(index, user).then((user) => {
+      console.log("put edit user");
+      users[index] = user;
+    });
+
     renderUsers(users);
+  }
+
+  async function findUserById(index) {
+    const users = await userService.findAllUsers();
+    const user = users.find((user) => {
+      return user._id === index;
+    });
+
+    return user;
   }
 
   async function inputUser() {
@@ -114,8 +122,8 @@
 
     const user = {
       username,
-      fist: firstName,
-      last: lastName,
+      firstName,
+      lastName,
       role,
     };
 
@@ -149,9 +157,9 @@
       rowClone.find(".wbdv-last-name").html(user.lastName);
       rowClone.find(".wbdv-role").html(user.role);
 
-      rowClone.find(".wbdv-remove").click(() => deleteUser(user.id));
+      rowClone.find(".wbdv-remove").click(() => deleteUser(user._id));
 
-      rowClone.find(".wbdv-edit").click(() => updateUser(rowClone, user.id));
+      rowClone.find(".wbdv-edit").click(() => editUser(rowClone, user._id));
 
       //last name and role
       tbody.append(rowClone);
@@ -170,7 +178,7 @@
 
     rowClone.find(".wbdv-remove").click(() => deleteUser(user.id));
 
-    rowClone.find(".wbdv-edit").click(() => updateUser(rowClone, user.id));
+    rowClone.find(".wbdv-edit").click(() => editUser(rowClone, user.id));
 
     //last name and role
     tbody.append(rowClone);
