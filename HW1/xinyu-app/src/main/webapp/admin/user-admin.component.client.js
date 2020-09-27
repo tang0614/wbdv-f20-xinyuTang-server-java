@@ -1,27 +1,27 @@
-const users = [
+let users = [
   {
-    id: 123,
+    id: 1,
     username: "alice win1",
     firstName: "alice",
     lastName: "win",
     role: "FACULTY",
   },
   {
-    id: 123,
+    id: 2,
     username: "alice win2",
     firstName: "alice",
     lastName: "win",
     role: "FACULTY",
   },
   {
-    id: 123,
+    id: 3,
     username: "alice win3",
     firstName: "alice",
     lastName: "win",
     role: "FACULTY",
   },
   {
-    id: 123,
+    id: 4,
     username: "alice win4",
     firstName: "alice",
     lastName: "win",
@@ -44,17 +44,16 @@ const users = [
     //create new user
     createUserBtn = jQuery(".wbdv-create");
     createUserBtn.click(createUser);
-    //delete user
-    deleteUserBtn = $(".wbdv-remove");
-    deleteUserBtn.click(deleteUser);
 
     // userService.findAllUsers().then(renderUsers);
     renderUsers(users);
   }
 
-  const deleteUser = (event) => {
-    const deleteButton = event.currentTarget;
-    console.log("deleteButton", deleteButton);
+  const deleteUser = (index) => {
+    console.log("deleting", index);
+    users.splice(index, 1);
+    console.log("users is", users);
+    renderUsers(users);
   };
 
   function createUser() {
@@ -95,6 +94,9 @@ const users = [
       rowClone.find(".wbdv-first-name").html(user.firstName);
       rowClone.find(".wbdv-last-name").html(user.lastName);
       rowClone.find(".wbdv-role").html(user.role);
+
+      rowClone.find(".wbdv-remove").click(() => deleteUser(user.id));
+      // rowClone.find(".wbdv-edit").click(() => deleteUser(user.id));
 
       //last name and role
       tbody.append(rowClone);
