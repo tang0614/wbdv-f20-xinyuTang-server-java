@@ -1,34 +1,3 @@
-let users = [
-  {
-    id: 1,
-    username: "alice win1",
-    firstName: "alice",
-    lastName: "win",
-    role: "FACULTY",
-  },
-  {
-    id: 2,
-    username: "alice win2",
-    firstName: "alice",
-    lastName: "win",
-    role: "FACULTY",
-  },
-  {
-    id: 3,
-    username: "alice win3",
-    firstName: "alice",
-    lastName: "win",
-    role: "FACULTY",
-  },
-  {
-    id: 4,
-    username: "alice win4",
-    firstName: "alice",
-    lastName: "win",
-    role: "FACULTY",
-  },
-];
-
 (function () {
   const userService = new UserService();
   let rowTemplate;
@@ -46,16 +15,18 @@ let users = [
     createUserBtn.click(createUser);
 
     // userService.findAllUsers().then(renderUsers);
+    const users = findAllUsers();
     renderUsers(users);
   }
 
   const deleteUser = (index) => {
     console.log("deleting", index);
+    const users = findAllUsers();
     users.splice(index, 1);
     renderUsers(users);
   };
 
-  const editUser = (rowClone, index) => {
+  const updateUser = (rowClone, index) => {
     console.log(
       "editing user rowClone",
       rowClone.find(".wbdv-edit").parent().parent().parent()
@@ -91,13 +62,13 @@ let users = [
           " />"
       );
 
-    //check edit user
+    //check update user
     createUserBtn = jQuery(".wbdv-update");
-    createUserBtn.click(() => createEditUser(index));
+    createUserBtn.click(() => findUserById(index));
   };
 
-  function createEditUser(index) {
-    console.log("calling editUser");
+  function findUserById(index) {
+    console.log("calling updateUser");
     const usernameFld = $("#edit_usernameFld");
     const firstNameFld = $("#edit_firstNameFld");
     const lastNameFld = $("#edit_lastNameFld");
@@ -106,6 +77,7 @@ let users = [
     const firstName = firstNameFld.val();
     const lastName = lastNameFld.val();
 
+    const users = findAllUsers();
     const old_user = users[index];
 
     console.log("old_user", old_user);
@@ -144,6 +116,7 @@ let users = [
       role,
     };
 
+    const users = findAllUsers();
     users.push(user);
     renderUsers(users);
     clearForm();
@@ -159,6 +132,7 @@ let users = [
 
   function renderUsers(users) {
     tbody.empty();
+
     for (var u in users) {
       const user = users[u];
       const rowClone = rowTemplate.clone();
@@ -170,10 +144,62 @@ let users = [
 
       rowClone.find(".wbdv-remove").click(() => deleteUser(user.id));
 
-      rowClone.find(".wbdv-edit").click(() => editUser(rowClone, user.id));
+      rowClone.find(".wbdv-edit").click(() => updateUser(rowClone, user.id));
 
       //last name and role
       tbody.append(rowClone);
     }
+  }
+
+  function renderUser(singleUser) {
+    tbody.empty();
+    const user = singleUser;
+    const rowClone = rowTemplate.clone();
+    rowClone.removeClass("wbdv-hidden");
+    rowClone.find(".wbdv-username").html(user.username);
+    rowClone.find(".wbdv-first-name").html(user.firstName);
+    rowClone.find(".wbdv-last-name").html(user.lastName);
+    rowClone.find(".wbdv-role").html(user.role);
+
+    rowClone.find(".wbdv-remove").click(() => deleteUser(user.id));
+
+    rowClone.find(".wbdv-edit").click(() => updateUser(rowClone, user.id));
+
+    //last name and role
+    tbody.append(rowClone);
+  }
+  function findAllUsers() {
+    let users = [
+      {
+        id: 1,
+        username: "alice win1",
+        firstName: "alice",
+        lastName: "win",
+        role: "FACULTY",
+      },
+      {
+        id: 2,
+        username: "alice win2",
+        firstName: "alice",
+        lastName: "win",
+        role: "FACULTY",
+      },
+      {
+        id: 3,
+        username: "alice win3",
+        firstName: "alice",
+        lastName: "win",
+        role: "FACULTY",
+      },
+      {
+        id: 4,
+        username: "alice win4",
+        firstName: "alice",
+        lastName: "win",
+        role: "FACULTY",
+      },
+    ];
+
+    return users;
   }
 })();

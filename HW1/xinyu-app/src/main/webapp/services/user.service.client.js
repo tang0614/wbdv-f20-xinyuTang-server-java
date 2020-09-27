@@ -4,7 +4,7 @@ function UserService() {
 
   // POST - Create
   function createUser(user) {
-    return fetch("http://localhost:8080/users", {
+    return fetch("https://wbdv-generic-server.herokuapp.com/api/xinyu/users", {
       method: "POST",
       body: JSON.stringify(user),
       headers: {
@@ -17,7 +17,9 @@ function UserService() {
 
   // GET - Read
   function findAllUsers() {
-    return fetch("http://localhost:8080/users").then(function (response) {
+    return fetch(
+      "https://wbdv-generic-server.herokuapp.com/api/xinyu/users"
+    ).then(function (response) {
       return response.json();
     });
   }
