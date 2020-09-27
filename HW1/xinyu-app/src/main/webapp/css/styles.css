@@ -12,3 +12,6 @@ input {
   padding: 2rem;
   font-size: 2rem;
 }
+.wbdv-hidden {
+  display: none;
+}
