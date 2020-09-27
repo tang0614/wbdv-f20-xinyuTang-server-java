@@ -4,16 +4,13 @@ function UserService() {
 
   // POST - Create
   function createUser(user) {
-    return fetch(
-      "https://wbdv-generic-server.herokuapp.com/api/jannunzi/users",
-      {
-        method: "POST",
-        body: JSON.stringify(user),
-        headers: {
-          "content-type": "application/json",
-        },
-      }
-    ).then(function (response) {
+    return fetch("https://wbdv-generic-server.herokuapp.com/api/xinyu/users", {
+      method: "POST",
+      body: JSON.stringify(user),
+      headers: {
+        "content-type": "application/json",
+      },
+    }).then(function (response) {
       return response.json();
     });
   }
@@ -21,7 +18,7 @@ function UserService() {
   // GET - Read
   function findAllUsers() {
     return fetch(
-      "https://wbdv-generic-server.herokuapp.com/api/jannunzi/users"
+      "https://wbdv-generic-server.herokuapp.com/api/xinyu/users"
     ).then(function (response) {
       return response.json();
     });

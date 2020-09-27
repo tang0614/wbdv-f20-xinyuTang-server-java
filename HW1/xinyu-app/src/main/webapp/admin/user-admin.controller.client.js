@@ -12,17 +12,16 @@
 
     //create new user
     createUserBtn = jQuery(".wbdv-create");
-    createUserBtn.click(createUser);
+    createUserBtn.click(inputUser);
     userService.findAllUsers().then(renderUsers);
   }
 
   const deleteUser = async (index) => {
     console.log("deleting", index);
-    try {
-      const users = await userService.findAllUsers();
-    } catch (error) {
-      console.log("error is", error);
-    }
+
+    const users = await userService.findAllUsers();
+
+    console.log("error is", error);
 
     users.splice(index, 1);
     renderUsers(users);
@@ -79,11 +78,9 @@
     const firstName = firstNameFld.val();
     const lastName = lastNameFld.val();
 
-    try {
-      const users = await userService.findAllUsers();
-    } catch (error) {
-      console.log("error is", error);
-    }
+    const users = await userService.findAllUsers();
+
+    console.log("error is", error);
 
     const old_user = users[index];
 
@@ -101,7 +98,7 @@
     renderUsers(users);
   }
 
-  async function createUser() {
+  async function inputUser() {
     console.log("calling userUser");
     const usernameFld = $("#usernameFld");
     const firstNameFld = $("#firstNameFld");
@@ -117,19 +114,17 @@
 
     const user = {
       username,
-      firstName,
-      lastName,
-      password,
+      fist: firstName,
+      last: lastName,
       role,
     };
 
-    try {
-      const users = await userService.findAllUsers();
-    } catch (error) {
-      console.log("error is", error);
-    }
+    const users = await userService.findAllUsers();
 
-    users.push(user);
+    userService.createUser(user).then((user) => {
+      console.log("posting new user ", user);
+      users.push(user);
+    });
     renderUsers(users);
     clearForm();
   }
