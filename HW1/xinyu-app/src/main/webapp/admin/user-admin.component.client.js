@@ -77,13 +77,20 @@ let users = [
       password,
       role,
     };
-    console.log("new user is ", user);
 
     users.push(user);
-    console.log(" users is ", users);
-    // userService.createUser(user).then(renderUsers);
+    renderUsers(users);
+    clearForm();
   }
 
+  function clearForm() {
+    console.log("clearing the form");
+    $("#usernameFld").val("");
+    $("#firstNameFld").val("");
+    $("#lastNameFld").val("");
+    $("#passwordFld").val("");
+    $("#roleFld").val("");
+  }
   function renderUsers(users) {
     tbody.empty();
     for (var u in users) {
