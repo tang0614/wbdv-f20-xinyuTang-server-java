@@ -20,10 +20,11 @@
     console.log("deleting", index);
 
     const users = await userService.findAllUsers();
+    userService.deleteUser(index).then((user) => {
+      console.log("deleted", user);
+      users.splice(index, 1);
+    });
 
-    console.log("error is", error);
-
-    users.splice(index, 1);
     renderUsers(users);
   };
 
